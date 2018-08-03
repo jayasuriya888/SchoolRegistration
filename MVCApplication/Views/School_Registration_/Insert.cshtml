@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewBag.Title = "Insert";
+}
+
+<h2>Insert</h2>
+@using (Html.BeginForm())
+{  
+    @Html.ValidationSummary(true)
+    <table border="1">
+        <tr>
+            <th colspan="2" align="center">
+                Apply Application Online
+            </th>
+        </tr>
+        <tr>
+            <td>Select Branch</td>
+            <td>
+            @Html.DropDownList("ddlbranch", new List<SelectListItem>
+            {
+                new SelectListItem { Text="HSR Layout",Value="1"},
+                new SelectListItem { Text="Yeshwanthpur",Value="2"},
+                new SelectListItem { Text = "Tumkur",Value = "3"}
+            }, "select")
+            </td>
+        </tr>
+        <tr>
+            <td>Select Class Id:</td>
+            <td>
+                @Html.DropDownList("ddlclassid", new List<SelectListItem>
+            {
+
+                new SelectListItem { Text="1",Value="1"},
+                new SelectListItem { Text="2",Value="2"},
+                new SelectListItem { Text = "3",Value = "3"},
+                new SelectListItem { Text = "4",Value = "4"},
+                new SelectListItem { Text = "5",Value = "5"},
+                new SelectListItem { Text = "6",Value = "6"},
+                new SelectListItem { Text = "7",Value = "7"},
+                new SelectListItem { Text = "8",Value = "8"},
+                new SelectListItem { Text = "9",Value = "9"},
+                new SelectListItem { Text = "10",Value = "10"}
+            }, "select")
+            </td>
+        </tr>
+        <tr>
+            <td>Enter Candidate Name:</td>
+            <td>
+               @Html.TextBox("txtname")
+            </td>
+        </tr>
+        <tr>
+            <td> Enter Age:</td>
+            <td>
+                @Html.TextBox("txtage")
+           
+        </tr>
+        <tr>
+            <td>Enter Date Of Birth :(dd-mm-yyyy)</td>
+            <td>
+                
+                @Html.TextBox("txtdob")
+            </td>
+        </tr>
+        <tr>
+            <td>Enter Address</td>
+            <td>
+                @Html.TextArea("txtaddress")
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <input type="submit" id="btnsubmit"  />
+            </td>
+        </tr>
+    </table>
+
+}
+@Html.ActionLink("Check Status", "Status")

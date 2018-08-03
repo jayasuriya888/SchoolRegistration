@@ -1,0 +1,17 @@
+﻿<div style="background-color:greenyellow; font-family:'Baskerville Old Face';font-size:larger;text-align:center;">
+    <h1 style="text-shadow:inherit;">School Registration</h1>
+</div>
+<div>
+    <table border="1">
+        <tr>
+            <td>@Html.ActionLink("Insert New", "Insert", "School_Registration_")</td>
+            <td>@Html.ActionLink("Report Page", "Report", "School_Registration_")</td>
+            <td>@Html.ActionLink("Status Check", "Status", "School_Registration_");</td>
+            <td>@Html.ActionLink("Status Update", "UpdateStatus", "School_Registration_")</td>
+        </tr>
+    </table>
+</div>
+<div>
+    @RenderBody()
+    
+</div>

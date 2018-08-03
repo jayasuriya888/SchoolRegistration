@@ -1,0 +1,58 @@
+﻿@model IEnumerable<MVCApplication.Models.poco>
+@{
+    ViewBag.Title = "Report";
+}
+
+<h2>Report</h2>
+@using (Html.BeginForm())
+{
+    <table>
+        <tr>
+            <td><h2>Application Reports</h2></td>
+
+        </tr>
+        <tr>
+            <td><label>Select :</label></td>
+            <td>
+                @Html.DropDownList("ddlpr", new List<SelectListItem> { new SelectListItem { Text = "Processed", Value = "Processed" }, new SelectListItem { Text = "Submitted, But Not Yet Processed", Value = "Submitted, But Not Yet Processed" } })
+            </td>
+        </tr>
+        <tr>
+            <td><label>Total Applications :</label></td>
+            <td>@Html.TextBox("totalcount", Session["totalcount"])</td>
+        </tr>
+        <tr>
+            <td><label>Processed :</label></td>
+            <td>@Html.TextBox("processedcount", Session["processedcount"])</td>
+        </tr>
+        <tr colspan="2">
+            <td><input type="submit" id="but" value="SHOW DATA" /></td>
+        </tr>
+    </table>
+       
+    
+    <table id="all">
+        <tr>
+            <th>Id</th>
+            <th>Candidate Name</th>
+            <th>Age</th>
+            <th>Address</th>
+            <th>Date Of Birth</th>
+            <th>Branch Id</th>
+            <th>Class Id</th>
+        </tr>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.id</td>
+                <td>@x.name</td>
+                <td>@x.age</td>
+                <td>@x.address</td>
+                <td>@x.dob</td>
+                <td>@x.branch_Id</td>
+                <td>@x.class_Id</td>
+            </tr>
+        }
+
+    </table>
+}
